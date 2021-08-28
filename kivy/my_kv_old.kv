@@ -1,0 +1,29 @@
+#style file
+<MyGrid>:    #refrence the class to draw on the screen: root =MyGrid
+    name: name                  #left: code, right: id
+    email: email
+
+    GridLayout:
+        cols:1
+        size: root.width -200, root.height-200       #overwrite default size with size of root: MyGrid
+        pos: 100, 100
+        GridLayout:
+            cols:2
+
+            Label:
+                text: "Name: "
+
+            TextInput:
+                id: name
+                multiline: False
+
+            Label:
+                text: "Email: "
+
+            TextInput:
+                id: email
+                multiline: False
+
+        Button:
+            text: "Submit"
+            on_press:root.btn()
