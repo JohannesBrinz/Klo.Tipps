@@ -8,6 +8,7 @@ WindowManager:
 
     password : passw
     namee : ben
+    email:email
 
     GridLayout:
         cols:1
@@ -24,6 +25,14 @@ WindowManager:
                 multiline: False
 
             Label:
+                text: "Email"
+
+
+            TextInput:
+                id:email
+                multiline: False
+
+            Label:
                 text: "Password"
 
 
@@ -33,10 +42,14 @@ WindowManager:
                 multiline: False
         Button:
             text: "Registrieren"
+            pos_hint:{"x":0.2,"y":0.05}
+            size_hint: 0.6, 0.15
+            font_size: (root.width**2 + root.height**2) / 14**4
             on_release:
-                app.root.current = "main"
-                root.manager.transition.direstion = "left"
-                root.login()
+                root.manager.transition.direction = "left"
+                root.submit()
+
+
 
 <MainWindow>:
     name: "main"
